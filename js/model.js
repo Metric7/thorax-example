@@ -1,3 +1,3 @@
-exports.Model = Thorax.Collection.extend({
+exports.Model = Thorax.Model.extend({
   
 });
