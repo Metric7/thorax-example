@@ -15,6 +15,7 @@ if (argv.watch) {
 }
 
 var server = express.createServer();
+server.use(express.logger());
 server.use(express.static(path.join(__dirname, 'public')));
 console.log('Express server listening on port ' + port);
 server.listen(port);
