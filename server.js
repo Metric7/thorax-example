@@ -6,7 +6,7 @@ var express = require('express'),
   spawn = require('child_process').spawn;
 
 if (argv.watch) {
-  var lumbar = spawn('lumbar', ['build', path.join(__dirname, 'lumbar.json'), path.join(__dirname, 'public')]);
+  var lumbar = spawn('lumbar', ['watch', path.join(__dirname, 'lumbar.json'), path.join(__dirname, 'public')]);
   lumbar.stdout.on('data', function(data) {
     process.stdout.write(data.toString());
   });
