@@ -4,5 +4,8 @@
   "dependencies": {
     "express": "*",
     "optimist": "*"
+  },
+  "scripts": {
+    "start": "node server.js --watch"
   }
 }
