@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "*",
-    "optimist": "*"
+    "optimist": "*",
+    "portscanner": "*"
   },
   "scripts": {
     "start": "node server.js --watch"

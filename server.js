@@ -1,4 +1,5 @@
 var express = require('express'),
+  portscanner = require('portscanner'),
   argv = require('optimist').argv,
   path = require('path'),
   port = argv._[0] || 8000,
@@ -17,5 +18,9 @@ if (argv.watch) {
 var server = express.createServer();
 server.use(express.logger());
 server.use(express.static(path.join(__dirname, 'public')));
-console.log('Express server listening on port ' + port);
-server.listen(port);
+
+portscanner.findAPortNotInUse(port, port + 25, 'localhost', function(error, foundPort) {
+  console.log('Express server listening on port ' + foundPort);
+  server.listen(foundPort);
+});
+
